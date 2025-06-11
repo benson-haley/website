@@ -1,0 +1,72 @@
+$sidebarWidth: 18vmax;
+$sidebarMargin: 2vmax;
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    width: $sidebarWidth;
+    height: 100vh;
+    margin: 0;
+    margin-left: $sidebarMargin;
+    margin-right: $sidebarMargin;
+
+    position: fixed;
+    right: 0;
+
+    filter: drop-shadow(0.3vmax 0.4vmax 0.5vmax black);
+}
+
+.photo {
+    width: 18vmax;
+    margin-top: 2vmax;
+    margin-right: 2vmax;
+
+    background-color: white;
+
+    transition: transform 0.5s ease;
+
+    img {
+        width: 16vmax;
+        margin: 1vmax;
+    }
+}
+
+.photo:hover {
+    transform: rotate(3deg);
+}
+
+.clips {
+    position: fixed;
+    bottom: 2vmax;
+    right: -3vmax;
+    width: 20vmax;
+
+    div {
+        transition: transform 0.5s ease;
+        margin-top: 1vmax;
+        background: linear-gradient(
+            135deg,
+            #999 5%,
+            #fff 10%,
+            #ccc 30%,
+            #ddd 50%,
+            #ccc 70%,
+            #fff 80%,
+            #999 95%
+        );
+        font-size: 1vmax;
+        $shadowSize: 0.1vmax;
+        box-shadow: inset $shadowSize $shadowSize $shadowSize 0 rgba(255,255,255,0.5), inset (-$shadowSize) (-$shadowSize) $shadowSize 0 rgba(0,0,0,0.5);
+        padding: 0.5vmax;
+        padding-left: 1vmax;
+        border-radius: 0.5vmax 0 0 0.5vmax;
+
+        user-select: none;
+        cursor: pointer;
+    }
+
+    div:hover {
+        transform: translateX(0.5vmax);
+    }
+}

@@ -1,0 +1,209 @@
+@use '../theme' as *;
+@use 'sass:color';
+
+$tieWidth: 18vmax;
+$tieMargin: 2vmax;
+$contentMargin: 0.5vmax;
+
+.tie {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: $tieWidth;
+
+    margin-left: $tieMargin;
+    margin-right: $tieMargin;
+
+    filter: drop-shadow(0.3vmax 0.4vmax 0.5vmax black);
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: $tieWidth;
+        z-index: 10;
+        padding-left: $contentMargin;
+        padding-right: $contentMargin;
+        position: fixed;
+
+        color: $barText;
+        text-shadow: 0.1vmax 0.1vmax color.invert($barText);
+
+        .header {
+            h1 {
+                font-size: 2.55vmax;
+                margin: 0;
+                margin-top: $contentMargin;
+                margin-bottom: $contentMargin;
+            }
+
+            div {
+                background: linear-gradient(
+                    135deg,
+                    #999 5%,
+                    #fff 10%,
+                    #ccc 30%,
+                    #ddd 50%,
+                    #ccc 70%,
+                    #fff 80%,
+                    #999 95%
+                );
+                font-size: 1vmax;
+                margin-right: 0;
+                margin-top: 1.5vmax;
+                margin-bottom: 1.5vmax;
+                margin-left: -1vmax;
+                width: 85%;
+                $shadowSize: 0.1vmax;
+                box-shadow: inset $shadowSize $shadowSize $shadowSize 0 rgba(255,255,255,0.5), inset (-$shadowSize) (-$shadowSize) $shadowSize 0 rgba(0,0,0,0.5);
+                padding: $contentMargin;
+                padding-left: 1vmax;
+                border-radius: 0 0.5vmax 0.5vmax 0;
+            }
+        }
+    
+        .navigation {
+            $navigationMargin: 0.5vmax;
+            margin: $navigationMargin;
+            height: 11.3vmax;
+            width: $tieWidth - ($navigationMargin * 4);
+
+            background: radial-gradient(
+                transparent 0, 
+                transparent $navigationMargin, 
+                $barInset $navigationMargin,
+                $barInset
+            );
+            $backgroundSize: 1.6vmax;
+            $backgroundPosition: -2.32vmax;
+            background-size: $backgroundSize $backgroundSize;
+            background-position: $backgroundPosition $backgroundPosition;
+
+            .box {
+                content: "";
+                background-color: $barInset;
+                height: 10.3vmax;
+                width: $tieWidth - ($navigationMargin * 6);
+                margin: $navigationMargin;
+                margin-bottom: -10.3vmax;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: $tieWidth - ($navigationMargin * 6);
+                margin: $navigationMargin;
+                margin-top: -20px;
+
+                h2 {
+                    font-size: 2.5vmax;
+                    color: $barInsetText;
+                    text-shadow: 0.5vmax 0.5vmax 1vmax color.invert($barInsetText);
+                    z-index: 1;
+                    margin: 0;
+                    margin-top: ($contentMargin / 2);
+                    margin-bottom: ($contentMargin / 2);
+                    padding-top: 0;
+                    user-select: none;
+                    cursor: pointer;
+
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                }
+
+                h2::before, h2::after {
+                    content: "-";
+                    margin-left: 0.5vmax;
+                    margin-right: 0.5vmax;
+                    opacity: 0%;
+                    transition: opacity 0.2s ease;
+                }
+
+                h2:hover::before, h2:hover::after {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+
+    .bar {
+        float: left;
+        position: fixed;
+        height: 100vh;
+        width: $tieWidth;
+
+        $height: 75vh;
+        clip-path: polygon(0 0, 0 $height, ($tieWidth / 2) calc($height + ($tieWidth / 2)), $tieWidth $height, $tieWidth 0px);
+    }
+}
+
+$bar1Semi: rgba($bar1, 0.5);
+$bar2Semi: rgba($bar2, 0.5);
+$bar3Semi: rgba($bar3, 0.5);
+.tie .bar {
+    filter: brightness(150%);
+    background-color: $bar0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        $bar1Semi 1vmax,
+        $bar1Semi 5vmax,
+        $bar2Semi 5vmax,
+        $bar2Semi 5.5vmax,
+        $bar1Semi 5.5vmax,
+        $bar1Semi 7vmax,
+        transparent 7vmax,
+        transparent 8vmax,
+        $bar3Semi 8vmax,
+        $bar3Semi 8.5vmax,
+        transparent 8.5vmax,
+        transparent 9vmax,
+        $bar3Semi 9vmax,
+        $bar3Semi 9.5vmax,
+        transparent 9.5vmax,
+        transparent 10vmax,
+        $bar1Semi 10vmax,
+        $bar1Semi 10.5vmax,
+        transparent 10.5vmax,
+        transparent 12vmax,
+        $bar1Semi 12vmax,
+        $bar1Semi 13.5vmax,
+        transparent 13.5vmax,
+        transparent 14vmax,
+        $bar2Semi 14vmax,
+        $bar2Semi 15.5vmax,
+        transparent 15.5vmax,
+        transparent 16vmax ), repeating-linear-gradient(
+        135deg,
+        $bar1Semi 1vmax,
+        $bar1Semi 5vmax,
+        $bar2Semi 5vmax,
+        $bar2Semi 5.5vmax,
+        $bar1Semi 5.5vmax,
+        $bar1Semi 7vmax,
+        transparent 7vmax,
+        transparent 8vmax,
+        $bar3Semi 8vmax,
+        $bar3Semi 8.5vmax,
+        transparent 8.5vmax,
+        transparent 9vmax,
+        $bar3Semi 9vmax,
+        $bar3Semi 9.5vmax,
+        transparent 9.5vmax,
+        transparent 10vmax,
+        $bar1Semi 10vmax,
+        $bar1Semi 10.5vmax,
+        transparent 10.5vmax,
+        transparent 12vmax,
+        $bar1Semi 12vmax,
+        $bar1Semi 13.5vmax,
+        transparent 13.5vmax,
+        transparent 14vmax,
+        $bar2Semi 14vmax,
+        $bar2Semi 15.5vmax,
+        transparent 15.5vmax,
+        transparent 16vmax
+    );
+}

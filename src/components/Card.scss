@@ -1,0 +1,25 @@
+.card {
+    display: flex;
+    background-color: white;
+    width: 56vmax;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+    
+    h1 {
+        margin: 0;
+    }
+}
+
+.inner {
+    margin: 1vmax;
+    padding: 1vmax;
+    width: 100%;
+    outline: 0.2vmax solid black;
+
+    min-width: 0;
+}
+
+.card * {
+    pointer-events: auto;
+    z-index: 100;
+}

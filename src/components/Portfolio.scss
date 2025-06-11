@@ -1,0 +1,121 @@
+@use '../theme' as *;
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    width: 56vmax;
+
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9vmax;
+        height: 2vmax;
+        width: 12vmax;
+        margin-right: -2vmax;
+        text-align: center;
+        background-color: #DDD;
+        clip-path: polygon(
+            15% 0%,   /* top-left */
+            85% 0%,   /* top-right */
+            100% 100%,/* bottom-right */
+            0% 100%   /* bottom-left */
+        );
+        cursor: pointer;
+        user-select: none;
+
+        transform: translateY(0.1px);
+    }
+
+    .selected {
+        background-color: white;
+    }
+}
+
+.portfolio {
+    display: flex;
+    background-color: white;
+    width: 56vmax;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+
+    .inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 56vmax;
+        margin: 1vmax;
+        padding: 1vmax;
+        width: 100%;
+        outline: 0.2vmax solid black;
+    
+        min-width: 0;
+
+        > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+            opacity: 0;
+            width: 52vmax;
+            margin-right: 54vmax;
+            margin: 0;
+            padding: 0;
+            gap: 1vmax;
+        }
+
+        > div:first-child {
+            opacity: 1;
+        }
+
+        > div:first-child * {
+            z-index: 10; // Hope that we don't have more than 10 tabs.
+        }
+    }
+}
+
+.inner {
+    pointer-events: none;
+}
+
+.portfolio .inner .overlaid {
+    display: flex;
+    flex-direction: row;
+
+    img, video {
+        width: 100%;
+        margin-left: 1vmax;
+        margin-right: -100%;
+        z-index: -1;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5vmax;
+        width: 100%;
+
+        div {
+            width: 80%;
+            background-color: $overlay;
+            z-index: -1;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            * {
+                pointer-events: auto;
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 1vmax;
+        margin-bottom: 1vmax;
+    }
+    h3:first-child {
+        margin-top: 0;
+    }
+}
