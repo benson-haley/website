@@ -14,8 +14,8 @@ const Tie = ({clipContent, tagContent}) => {
                         {
                             tagContent.map((content) => {
                                 return content.href[0] === "#"
-                                    ? <h2><a className="special" href={content.href}>{content.text}</a></h2>
-                                    : <h2><a className="special" href={content.href} target="_blank" rel="noreferrer">{content.text}</a></h2>
+                                    ? <h2 key={content.text}><a className="special" href={content.href}>{content.text}</a></h2>
+                                    : <h2 key={content.text}><a className="special" href={content.href} target="_blank" rel="noreferrer">{content.text}</a></h2>
                                 
                             })
                         }

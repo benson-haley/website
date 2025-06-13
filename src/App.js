@@ -18,12 +18,10 @@ import { pdfjs } from 'react-pdf';
 import { Document, Page } from 'react-pdf';
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs';
 
 const App = () => {
+  const resumeLocation = "/resume.pdf";
   const [pdfContainer, { width }] = useMeasure();
 
   return (
@@ -33,7 +31,7 @@ const App = () => {
         tagContent={[
           {text: "About Me", href: "#about"},
           {text: "Portfolio", href: "#portfolio"},
-          {text: "Résumé", href: "/resume.pdf"}
+          {text: "Résumé", href: resumeLocation}
         ]}>
       </Tie>
       <div className="main">
@@ -96,7 +94,7 @@ const App = () => {
         </Portfolio>
         <Card id="resume">
           <div ref={pdfContainer}>
-            <Document file="http://localhost:3000/resume.pdf" >
+            <Document file={resumeLocation} >
               <Page pageNumber={1} width={width}/>
             </Document>
           </div>
