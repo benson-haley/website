@@ -1,5 +1,3 @@
-@use './theme' as *;
-
 @font-face {
   font-family: lato;
   src: url("./assets/font/Lato-Thin.ttf");
@@ -28,6 +26,11 @@
   font-style: normal;
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 h1 {
   font-weight: 900;
 }
@@ -45,12 +48,9 @@ body {
   padding: 0;
   border: 0;
 
-  background-color: $bg;
+  background-color: var(--bg);
 
   font-family: lato, sans-serif;
-
-  background-color: $bg;
-  // background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, $bgStripe 6px, $bgStripe 7px);
 }
 
 .app {
@@ -64,65 +64,6 @@ body {
 
   width: 100vw;
   height: 100vh;
-
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    margin-left: 22vmax;
-
-    width: 100%;
-
-    filter: drop-shadow(0.3vmax 0.4vmax 0.5vmax black);
-  }
-}
-
-.contact {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 56vmax;
-  margin-right: 2vmax;
-  margin-bottom: 2vmax;
-  margin-top: 2vmax;
-
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  p {
-    font-size: 1.2vmax;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding-left: 1vmax;
-    padding-right: 1vmax;
-  }
-
-  hr {
-    border: 0.11vmax solid black;
-    width: 4vmax;
-    padding: 0;
-    margin: 0;
-    margin-top: 1vmax;
-    margin-bottom: 1vmax;
-  }
-
-}
-
-.footer {
-  background-color: transparent;
-  width: 100%;
-  height: 0vmax;
-  min-height: 0.01vmax;
 }
 
 p {
@@ -131,7 +72,7 @@ p {
 
 a:not(.special) {
   position: relative;
-  color: $link;
+  color: var(--link);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
@@ -143,7 +84,7 @@ a:not(.special) {
     bottom: 0;
     height: 0.1vmax;
     width: 100%;
-    background-color: $link;
+    background-color: var(--link);
     transition: height 0.2s ease;
     z-index: -1;
   }

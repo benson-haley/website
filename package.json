@@ -9,12 +9,15 @@
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@uidotdev/usehooks": "^2.4.1",
+    "bootstrap": "^5.3.7",
     "gh-pages": "^6.3.0",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "react-pdf": "^9.2.1",
     "react-scripts": "5.0.1",
     "sass": "^1.88.0",
+    "swiper": "^11.2.8",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

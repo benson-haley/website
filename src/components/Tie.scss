@@ -1,6 +1,3 @@
-@use '../theme' as *;
-@use 'sass:color';
-
 $tieWidth: 18vmax;
 $tieMargin: 2vmax;
 $contentMargin: 0.5vmax;
@@ -16,6 +13,8 @@ $contentMargin: 0.5vmax;
 
     filter: drop-shadow(0.3vmax 0.4vmax 0.5vmax black);
 
+    transition: translate 0.5s ease;
+
     .content {
         display: flex;
         flex-direction: column;
@@ -25,8 +24,7 @@ $contentMargin: 0.5vmax;
         padding-right: $contentMargin;
         position: fixed;
 
-        color: $barText;
-        text-shadow: 0.1vmax 0.1vmax color.invert($barText);
+        color: var(--tie-text);
 
         .header {
             h1 {
@@ -34,6 +32,7 @@ $contentMargin: 0.5vmax;
                 margin: 0;
                 margin-top: $contentMargin;
                 margin-bottom: $contentMargin;
+                text-shadow: 0.1vmax 0.1vmax var(--tie-text-inverted);
             }
 
             div {
@@ -70,8 +69,8 @@ $contentMargin: 0.5vmax;
             background: radial-gradient(
                 transparent 0, 
                 transparent $navigationMargin, 
-                $barInset $navigationMargin,
-                $barInset
+                var(--tie-inset) $navigationMargin,
+                var(--tie-inset)
             );
             $backgroundSize: 1.6vmax;
             $backgroundPosition: -2.32vmax;
@@ -80,7 +79,7 @@ $contentMargin: 0.5vmax;
 
             .box {
                 content: "";
-                background-color: $barInset;
+                background-color: var(--tie-inset);
                 height: 10.3vmax;
                 width: $tieWidth - ($navigationMargin * 6);
                 margin: $navigationMargin;
@@ -98,8 +97,8 @@ $contentMargin: 0.5vmax;
 
                 h2 {
                     font-size: 2.5vmax;
-                    color: $barInsetText;
-                    text-shadow: 0.5vmax 0.5vmax 1vmax color.invert($barInsetText);
+                    color: var(--tie-inset-text);
+                    text-shadow: 0.5vmax 0.5vmax 1vmax var(--tie-inset-text-inverted);
                     z-index: 1;
                     margin: 0;
                     margin-top: ($contentMargin / 2);
@@ -140,69 +139,70 @@ $contentMargin: 0.5vmax;
     }
 }
 
-$bar1Semi: rgba($bar1, 0.5);
-$bar2Semi: rgba($bar2, 0.5);
-$bar3Semi: rgba($bar3, 0.5);
 .tie .bar {
-    filter: brightness(150%);
-    background-color: $bar0;
+    --tie1-semi: color-mix(in srgb, var(--tie1) 50%, transparent);
+    --tie2-semi: color-mix(in srgb, var(--tie2) 50%, transparent);
+    --tie3-semi: color-mix(in srgb, var(--tie3) 50%, transparent);
+
+    filter: var(--tie-filter);
+    background-color: var(--tie0);
     background-image: repeating-linear-gradient(
         45deg,
-        $bar1Semi 1vmax,
-        $bar1Semi 5vmax,
-        $bar2Semi 5vmax,
-        $bar2Semi 5.5vmax,
-        $bar1Semi 5.5vmax,
-        $bar1Semi 7vmax,
+        var(--tie1-semi) 1vmax,
+        var(--tie1-semi) 5vmax,
+        var(--tie2-semi) 5vmax,
+        var(--tie2-semi) 5.5vmax,
+        var(--tie1-semi) 5.5vmax,
+        var(--tie1-semi) 7vmax,
         transparent 7vmax,
         transparent 8vmax,
-        $bar3Semi 8vmax,
-        $bar3Semi 8.5vmax,
+        var(--tie3-semi) 8vmax,
+        var(--tie3-semi) 8.5vmax,
         transparent 8.5vmax,
         transparent 9vmax,
-        $bar3Semi 9vmax,
-        $bar3Semi 9.5vmax,
+        var(--tie3-semi) 9vmax,
+        var(--tie3-semi) 9.5vmax,
         transparent 9.5vmax,
         transparent 10vmax,
-        $bar1Semi 10vmax,
-        $bar1Semi 10.5vmax,
+        var(--tie1-semi) 10vmax,
+        var(--tie1-semi) 10.5vmax,
         transparent 10.5vmax,
         transparent 12vmax,
-        $bar1Semi 12vmax,
-        $bar1Semi 13.5vmax,
+        var(--tie1-semi) 12vmax,
+        var(--tie1-semi) 13.5vmax,
         transparent 13.5vmax,
         transparent 14vmax,
-        $bar2Semi 14vmax,
-        $bar2Semi 15.5vmax,
+        var(--tie2-semi) 14vmax,
+        var(--tie2-semi) 15.5vmax,
         transparent 15.5vmax,
         transparent 16vmax ), repeating-linear-gradient(
         135deg,
-        $bar1Semi 1vmax,
-        $bar1Semi 5vmax,
-        $bar2Semi 5vmax,
-        $bar2Semi 5.5vmax,
-        $bar1Semi 5.5vmax,
-        $bar1Semi 7vmax,
+        var(--tie1-semi) 1vmax,
+        var(--tie1-semi) 5vmax,
+        var(--tie2-semi) 5vmax,
+        var(--tie2-semi) 5.5vmax,
+        var(--tie1-semi) 5.5vmax,
+        var(--tie1-semi) 7vmax,
         transparent 7vmax,
         transparent 8vmax,
-        $bar3Semi 8vmax,
-        $bar3Semi 8.5vmax,
+        var(--tie3-semi) 8vmax,
+        var(--tie3-semi) 8.5vmax,
         transparent 8.5vmax,
         transparent 9vmax,
-        $bar3Semi 9vmax,
-        $bar3Semi 9.5vmax,
+        var(--tie3-semi) 9vmax,
+        var(--tie3-semi) 9.5vmax,
         transparent 9.5vmax,
         transparent 10vmax,
-        $bar1Semi 10vmax,
-        $bar1Semi 10.5vmax,
+        var(--tie1-semi) 10vmax,
+        var(--tie1-semi) 10.5vmax,
         transparent 10.5vmax,
         transparent 12vmax,
-        $bar1Semi 12vmax,
-        $bar1Semi 13.5vmax,
+        var(--tie1-semi) 12vmax,
+        var(--tie1-semi) 13.5vmax,
         transparent 13.5vmax,
         transparent 14vmax,
-        $bar2Semi 14vmax,
-        $bar2Semi 15.5vmax,
+        var(--tie2-semi) 14vmax,
+        var(--tie2-semi) 15.5vmax,
         transparent 15.5vmax,
         transparent 16vmax
     );

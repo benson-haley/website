@@ -1,14 +1,37 @@
-$bg: #333;
-$bgStripe: #2C2C2C;
+:root {
+    // Website background color.
+    --bg: #333;
+    // Portfolio overlay background color.
+    --portfolio-overlay: #FFFFFFAA;
+    // Tie colors.
+    --tie-text: black;
+    --tie-text-inverted: white;
+    --tie-inset: var(--bg);
+    --tie-inset-text: white;
+    --tie-inset-text-inverted: black;
+    --tie0: #d1b7a8;
+    --tie1: #546c6c;
+    --tie2: #2e3a3a;
+    --tie3: #14100f;
+    --tie-filter: brightness(150%);
+    // Link color.
+    --link: var(--tie1);
+}
 
-$barText: black;
-$barInset: #333333;
-$barInsetText: white;
-$bar0: #d1b7a8;
-$bar1: #546c6c;
-$bar2: #2e3a3a;
-$bar3: #14100f;
+.theme-sage {
+    --tie0: #d1b7a8;
+    --tie1: #546c6c;
+    --tie2: #2e3a3a;
+    --tie3: #14100f;
+    --tie-filter: brightness(150%);
+    --link: var(--tie1);
+}
 
-$link: #546c6c;
-
-$overlay: #FFFFFFAA
+.theme-crayon {
+    --tie0: #FFA300;
+    --tie1: #FF004D;
+    --tie2: #29ADFF;
+    --tie3: #00E436;
+    --tie-filter: sepia(30%);
+    --link: var(--tie1);
+}

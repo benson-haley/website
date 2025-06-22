@@ -99,7 +99,7 @@
 
         div {
             width: 80%;
-            background-color: $overlay;
+            background-color: var(--portfolio-overlay);
             z-index: -1;
             p {
                 padding: 0;
@@ -119,3 +119,8 @@
         margin-top: 0;
     }
 }
+
+.portfolio .inner .carousel-container {
+    pointer-events: auto;
+}
+

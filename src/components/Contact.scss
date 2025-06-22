@@ -1,0 +1,38 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 56vmax;
+  margin-right: 2vmax;
+  margin-bottom: 2vmax;
+  margin-top: 2vmax;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  p {
+    font-size: 1.2vmax;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+  }
+
+  hr {
+    border: 0.11vmax solid black;
+    width: 4vmax;
+    padding: 0;
+    margin: 0;
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+  }
+
+}
