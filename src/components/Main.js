@@ -105,7 +105,7 @@ const MainActor = () => {
     const carousel2 = [
         { src: '/carousel/spa/angelsSolo.jpg', caption: 'The Voice of Louis stares down darkness in Angels in America' },
         { src: '/carousel/spa/tniw.jpg', caption: 'The Guide capivates the audience in Thy Name is Woman' },
-        { src: '/carousel/spa/angelsGrey.jpg', caption: 'A rehearsal shot from Angels in America' },
+        { src: '/carousel/spa/angelsGray.jpg', caption: 'A rehearsal shot from Angels in America' },
     ];
     const carousel3 = [
         { src: '/carousel/players/attwnSolo.jpg', caption: "Justice Wargrave in Agatha Christie's And Then There Were None" },
