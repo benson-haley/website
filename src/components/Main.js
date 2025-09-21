@@ -91,7 +91,7 @@ const MainActor = () => {
     const carousel0 = [
         { src: '/carousel/gynt/troll.jpg', caption: 'In the Hall of the Mountain King' },
         { src: '/carousel/gynt/all.jpg', caption: 'The many faces of Peer Gynt' },
-        { src: '/carousel/gynt/buck.jpg', caption: 'Trudging through the relentless of expanse of biting snow' },
+        { src: '/carousel/gynt/buck.jpg', caption: 'Trudging through the relentless expanse of biting snow' },
         { src: '/carousel/gynt/ocean.jpg', caption: 'In media res' },
         { src: '/carousel/gynt/yacht.jpg', caption: 'The motley crew of the yacht' },
         { src: '/carousel/gynt/boyg.jpg', caption: 'Peer Gynt confronts the Boyg' },
